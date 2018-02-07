@@ -9,9 +9,11 @@
 
 <ion-content scroll="false" style="background-color:#d9d6d7">
 
- <ion-grid style="height: 100% !important">
 
-	 <ion-row style="height: 50%">
+
+ <ion-grid style="height: 95% !important">
+
+	 <ion-row style="height: 45%">
           <ion-col col-2.5></ion-col>
           <ion-col col-7 style="text-align: center;"><img src="../assets/imgs/logo1.png" /></ion-col>
           <ion-col col-2.5></ion-col>
@@ -19,11 +21,11 @@
  
  
 
-        <ion-grid class="button-group" >
-  <ion-row>
+        <ion-grid class="button-group" style="height: 50%">
+  <ion-row style="height: 33%">
     <ion-col>
 
-<button ion-button color="light" full>
+<button ion-button color="light" full style="height: 100%">
       <div><ion-icon name="cart"> </ion-icon> <br> 
       	<label> Buy Incentive</label>
       </div>
@@ -32,10 +34,10 @@
     </ion-col>
     </ion-row>
     
-    	<ion-row>
-    		<ion-col>
+    	<ion-row style="height: 33%">
+    		<ion-col >
 
-     <button ion-button color="light" full >
+     <button ion-button color="light" full style="height: 100%" (click)="manageaccountpage2()">
       <div><ion-icon name="contact"> </ion-icon> <br> 
       	<label> Manage Account</label>
       </div>
@@ -44,7 +46,7 @@
    		</ion-col>
    		<ion-col>
 
-<button ion-button color="light" full>
+<button ion-button color="light" full style="height: 100%">
       <div><ion-icon name="stats"> </ion-icon> <br> 
       	<label> Statistics</label>
       </div>
@@ -55,10 +57,10 @@
     
   
 
-<ion-row>
+<ion-row style="height: 33%">
     <ion-col>
 
-<button ion-button color="light" full>
+<button ion-button color="light" full style="height: 100%">
       <div><ion-icon name="camera"> </ion-icon> <br> 
       	<label> Scan QRCode</label>
       </div>
@@ -72,3 +74,4 @@
       
 
 </ion-grid>
+

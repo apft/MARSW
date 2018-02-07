@@ -9,6 +9,10 @@ import { HomePage } from '../pages/home/home';
 
 import { MainpagePage } from '../pages/mainpage/mainpage';
 import { SignupPage } from '../pages/signup/signup';
+import { ManageaccountPage } from '../pages/manageaccount/manageaccount';
+import { AddincentivePage } from '../pages/addincentive/addincentive';
+import { EditincentivePage } from '../pages/editincentive/editincentive';
+
 
 
 @NgModule({
@@ -16,7 +20,11 @@ import { SignupPage } from '../pages/signup/signup';
     MyApp,
     HomePage,
     MainpagePage,
-    SignupPage
+    SignupPage,
+    ManageaccountPage,
+    AddincentivePage,
+    EditincentivePage
+
   ],
   imports: [
     BrowserModule,
@@ -27,7 +35,11 @@ import { SignupPage } from '../pages/signup/signup';
     MyApp,
     HomePage,
     MainpagePage,
-    SignupPage
+    SignupPage,
+    ManageaccountPage,
+    AddincentivePage,
+    EditincentivePage
+
   ],
   providers: [
     StatusBar,

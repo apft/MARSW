@@ -14,6 +14,8 @@ import { AddincentivePage } from '../pages/addincentive/addincentive';
 import { EditincentivePage } from '../pages/editincentive/editincentive';
 import { ManageincentivePage } from '../pages/manageincentive/manageincentive';
 import { buyPage } from '../pages/buy/buy';
+import { InstructormainpagePage } from '../pages/Instructormainpage/Instructormainpage';
+
 
 
 
@@ -27,7 +29,8 @@ import { buyPage } from '../pages/buy/buy';
     AddincentivePage,
     EditincentivePage,
     ManageincentivePage,
-    buyPage
+    buyPage,
+    InstructormainpagePage
 
   ],
   imports: [
@@ -44,7 +47,8 @@ import { buyPage } from '../pages/buy/buy';
     AddincentivePage,
     EditincentivePage,
     ManageincentivePage,
-    buyPage
+    buyPage,
+    InstructormainpagePage
 
   ],
   providers: [

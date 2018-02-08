@@ -38,13 +38,14 @@
 
             <ion-list style="opacity:0.8;">
 
-              <ion-item style="border: 2px solid rgb(0,139,158); border-radius: 5px;">
-                <ion-input type="text" placeholder="Student ID"></ion-input>
+              <ion-item style="border: 2px solid #008a9d; border-radius: 5px;">
+                <ion-input type="text" placeholder="ID"></ion-input>
               </ion-item>
+
               <ion-row>
                 <ion-col col-12></ion-col>
               </ion-row>
-              <ion-item style="border: 2px solid rgb(0,139,158); border-radius: 5px;">
+              <ion-item style="border: 2px solid #008a9d; border-radius: 5px;">
                 <ion-input type="password" placeholder="Password"></ion-input>
               </ion-item>
 
@@ -52,7 +53,7 @@
           </ion-col>
         </ion-row>
         <ion-row >
-          <ion-col col-12> <button ion-button color="secondary" full style="border: 2px solid rgb(53,218,100); border-radius: 5px; height:50px" (click)="gotoMain()" >Login</button> </ion-col>
+          <ion-col col-12> <button ion-button  color="blue" full style="border: 2px solid #008a9d;   border-radius: 5px; height:50px" (click)="gotoMain()" >Login</button> </ion-col>
         </ion-row>
 
         <ion-row>
@@ -85,9 +86,9 @@
 
         <ion-row>
           <ion-col col-1></ion-col>
-          <ion-col col-3> <button ion-button color="light" clear (click)="signup()"> Sign Up </button> </ion-col>
+          <ion-col col-3> <button ion-button color="blue" clear (click)="signup()"> Sign Up </button> </ion-col>
           <ion-col col-1></ion-col>
-          <ion-col col-5> <button ion-button color="light" clear>Forget Password</button> </ion-col>
+          <ion-col col-5> <button ion-button color="blue" clear (click)="gotoInstructorMain()" >Forget Password</button> </ion-col>
           <ion-col col-3></ion-col>
         </ion-row>
 

@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ManageaccountPage } from '../manageaccount/manageaccount';
 import { AddincentivePage } from '../addincentive/addincentive';
 import { EditincentivePage } from '../editincentive/editincentive';
+import { buyPage } from '../buy/buy';
 
 
 
@@ -33,6 +34,10 @@ export class MainpagePage {
 
   manageaccountpage2(){
     this.navCtrl.push(EditincentivePage);
+  }
+
+  buypage(){
+    this.navCtrl.push(buyPage);
   }
 
 

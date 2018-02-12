@@ -1,0 +1,138 @@
+page-mainpage {
+
+  .icon {
+    font-size: 35px;
+  }
+}
+
+.centercol {
+  text-align: center;
+}
+/*
+.button-group {
+  .col {
+    &:first-child:not(:last-child) {
+      padding-right: 0;
+      padding-bottom: 0;
+      padding-top: 0;
+      .button {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+    &:not(:first-child):not(:last-child) {
+      padding-right: 0;
+      padding-left: 0;
+      padding-bottom: 0;
+      padding-top: 0;
+      .button {
+        border-radius: 0;
+      }
+    }
+    &:last-child:not(:first-child) {
+      padding-left: 0;
+      padding-bottom: 0;
+      padding-top: 0;
+      .button {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}
+
+
+.boxes-group {
+  .col {
+    &:first-child:not(:last-child) {
+      padding-right: 0;
+      padding-bottom: 0;
+      padding-top: 0;
+      .box {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+    &:not(:first-child):not(:last-child) {
+      padding-right: 0;
+      padding-left: 0;
+      padding-bottom: 0;
+      padding-top: 0;
+      .box {
+        border-radius: 0;
+      }
+    }
+    &:last-child:not(:first-child) {
+      padding-left: 0;
+      padding-bottom: 0;
+      padding-top: 0;
+      .box {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}
+
+*/
+
+.redBox {
+  background: #e65252;
+  text-align: center;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.redBox a, h3 {
+  color: #d9d6d7;
+}
+
+/*.boxes .box {height: 160px;padding: 15px;} */
+.boxes-group .box h3 {
+  color: white
+}
+
+.boxes-group .box h3 span {
+}
+
+.boxes-group .redBox {
+  background: #e65252
+}
+
+.boxes-group .yellowBox {
+  background: #f2c165
+}
+
+.boxes-group .blueBox {
+  background: #3b85e2
+}
+
+.boxes-group .greenBox {
+  background: #64c5b1
+}
+
+.boxes-group .box a {
+  color: #fff;
+}
+/*.boxes .box a.pull-right p {float: right}
+.boxes .box a.pull-left p {float: left}
+.boxes .box a.pull-left img {float: left}
+.boxes .box a.pull-right img {float: left;}
+.boxes .box a img {margin-right:10px} 
+.boxes .box a {color:#fff;font-size:16px;margin-top: 25px;}
+.boxes .box a span {display:block}
+
+/*
+@media screen and (min-width:0) and (max-width:1370px) { 
+    .boxes .box {overflow: hidden;height: 230px}
+}
+
+@media screen and (min-width:0) and (max-width:1199px) {  
+    .sort-header select{ width: 100%}   
+    .top-title{display: block;width: 30%;overflow: hidden;} 
+    .boxes .box {height: 160px;margin-bottom: 30px;}
+    .worest{margin-bottom:20px}
+}
+*/
+
+

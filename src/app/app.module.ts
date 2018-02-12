@@ -14,7 +14,9 @@ import { AddincentivePage } from '../pages/addincentive/addincentive';
 import { EditincentivePage } from '../pages/editincentive/editincentive';
 import { ManageincentivePage } from '../pages/manageincentive/manageincentive';
 import { buyPage } from '../pages/buy/buy';
-import { InstructormainpagePage } from '../pages/Instructormainpage/Instructormainpage';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { InstructormainpagePage } from '../pages/instructormainpage/instructormainpage';
+import { StatisticsPage } from '../pages/statistics/statistics'
 
 
 
@@ -30,7 +32,8 @@ import { InstructormainpagePage } from '../pages/Instructormainpage/Instructorma
     EditincentivePage,
     ManageincentivePage,
     buyPage,
-    InstructormainpagePage
+    InstructormainpagePage,
+    StatisticsPage
 
   ],
   imports: [
@@ -48,12 +51,14 @@ import { InstructormainpagePage } from '../pages/Instructormainpage/Instructorma
     EditincentivePage,
     ManageincentivePage,
     buyPage,
-    InstructormainpagePage
+    InstructormainpagePage,
+    StatisticsPage
 
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    BarcodeScanner,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

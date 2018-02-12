@@ -4,8 +4,9 @@ import { NavController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 
 import { MainpagePage } from '../mainpage/mainpage';
-import { InstructormainpagePage } from '../Instructormainpage/Instructormainpage';
+
 import { SignupPage } from '../signup/signup';
+import { InstructormainpagePage } from '../instructormainpage/instructormainpage';
 
 
 @Component({

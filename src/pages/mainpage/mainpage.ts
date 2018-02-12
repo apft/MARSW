@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ManageaccountPage } from '../manageaccount/manageaccount';
-import { AddincentivePage } from '../addincentive/addincentive';
-import { EditincentivePage } from '../editincentive/editincentive';
 import { buyPage } from '../buy/buy';
+import { StatisticsPage } from '../statistics/statistics';
+import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 
 
 
@@ -21,20 +21,20 @@ import { buyPage } from '../buy/buy';
 })
 export class MainpagePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  scanData: {};
+  options: BarcodeScannerOptions;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private barcodeScanner: BarcodeScanner) {
   }
 
   manageaccountpage(){
     this.navCtrl.push(ManageaccountPage);
   }
 
-  manageaccountpage1(){
-    this.navCtrl.push(AddincentivePage);
+  StatisticsPage() {
+    this.navCtrl.push(StatisticsPage);
   }
 
-  manageaccountpage2(){
-    this.navCtrl.push(EditincentivePage);
-  }
 
   buypage(){
     this.navCtrl.push(buyPage);
@@ -44,5 +44,18 @@ export class MainpagePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MainpagePage');
   }
+
+  scan() {
+    this.options = {
+      prompt: "Scan your barcode to gain score"
+    }
+    this.barcodeScanner.scan(this.options).then((barcodeData) => {
+
+      console.log(barcodeData);
+      this.scanData = barcodeData;
+    }, (err) => {
+      console.log("Error occured : " + err);
+    });
+  }    
 
 }

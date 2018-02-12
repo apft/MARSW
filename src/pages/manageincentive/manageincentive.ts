@@ -29,8 +29,6 @@ addincentivepage(){
     this.navCtrl.push(EditincentivePage);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ManageincentivePage');
-  }
+  
 
 }

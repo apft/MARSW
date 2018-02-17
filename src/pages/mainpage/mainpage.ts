@@ -23,8 +23,14 @@ export class MainpagePage {
 
   scanData: {};
   options: BarcodeScannerOptions;
+  public userDetails: any;
 
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, private barcodeScanner: BarcodeScanner) {
+
+    const data = JSON.parse(localStorage.getItem("userData"));
+  this.userDetails = data.userData;
+
   }
 
   manageaccountpage(){
@@ -58,4 +64,14 @@ export class MainpagePage {
     });
   }    
 
+  backToSignin() {
+    const root = this.app.getRootNav();
+    root.popToRoot();
+  }
+
+  logout() {
+    //Api Token Logout
+    localStorage.clear();
+    setTimeout(() => this.backToSignin(), 1000);
+  }
 }

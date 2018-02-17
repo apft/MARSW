@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { ActionSheetController } from 'ionic-angular';
-import { NavController } from 'ionic-angular';
+import { NavController, ToastController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 
 import { MainpagePage } from '../mainpage/mainpage';
 
 import { SignupPage } from '../signup/signup';
 import { InstructormainpagePage } from '../instructormainpage/instructormainpage';
+import { AuthService } from '../../providers/auth-service/auth-service';
+
 
 
 @Component({
@@ -15,7 +17,11 @@ import { InstructormainpagePage } from '../instructormainpage/instructormainpage
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public actionSheetCtrl: ActionSheetController, public alertCtrl: AlertController) {
+  resposeData : any;
+  userData = {id: '', f_name: 'a', l_name: 'a', email: 'aa', password: ''};
+
+  constructor(public navCtrl: NavController, public actionSheetCtrl: ActionSheetController, public alertCtrl: AlertController,
+   authService : AuthService,  private toastCtrl:ToastController) {
 
 
   }
@@ -32,40 +38,41 @@ export class HomePage {
     this.navCtrl.push(SignupPage);
   }
 
-  presentActionSheet() {
-    let actionSheet = this.actionSheetCtrl.create({
-      title: 'Modify your album',
-      buttons: [
-        {
-          text: 'Destructive',
-          role: 'destructive',
-          handler: () => {
-            console.log('Destructive clicked');
-          }
-        }, {
-          text: 'Archive',
-          handler: () => {
-            console.log('Archive clicked');
-          }
-        }, {
-          text: 'Cancel',
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }
-      ]
+ 
+
+ login(){
+   if(this.userData.id && this.userData.password){
+   this.authService.postData(this.userData, 'signup').then((result) =>{
+    this.resposeData = result;
+    console.log(this.resposeData);
+    if(this.resposeData.userData){
+     localStorage.setItem('userData', JSON.stringify(this.resposeData) )
+this.navCtrl.push(MainpagePage);
+  }
+  else{
+    this.presentToast("Please give valid username and password");
+  }
+    
+
+
+    }, (err) => {
+      //Connection failed message
     });
-    actionSheet.present();
+   }
+   else{
+    this.presentToast("Give username and password");
+   }
+  
   }
 
-  showAlert() {
-    let alert = this.alertCtrl.create({
-      title: 'New Friend!',
-      subTitle: 'Your friend, Obi wan Kenobi, just accepted your friend request!',
-      buttons: ['OK','Cencel']
+presentToast(msg) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 2000
     });
-    alert.present();
+    toast.present();
   }
+
+ 
 
 }

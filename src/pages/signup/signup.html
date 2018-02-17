@@ -20,6 +20,13 @@
 
       <ion-grid style="height: 100%">
 
+        <ion-list inset>
+    <ion-item *ngFor="let user of users">
+      <h2>{{user.f_name}}</h2>
+      <p>{{user.email}}</p>
+    </ion-item>
+  </ion-list>
+
        
 
         <ion-row>
@@ -49,31 +56,34 @@
         
         <ion-row>
           <ion-col col-12>
-
+ <form (ngSubmit)="saveUser()">
             <ion-list style="opacity:0.8;">
+ 
 
               <ion-item style="border: 2px solid rgb(0,139,158); border-radius: 5px;">
-                <ion-input type="text" placeholder="ID"></ion-input>
+                <ion-input type="text" placeholder="ID" [(ngModel)]="user.id" name="id"></ion-input>
               </ion-item>
               
               <ion-item style="border: 2px solid rgb(0,139,158); border-radius: 5px;">
-                <ion-input type="text" placeholder="First Nane"></ion-input>
+                <ion-input type="text" placeholder="First Name" [(ngModel)]="user.f_name" name="f_name"></ion-input>
               </ion-item>
               <ion-item style="border: 2px solid rgb(0,139,158); border-radius: 5px;">
-                <ion-input type="text" placeholder="Last Name"></ion-input>
+                <ion-input type="text" placeholder="Last Name" [(ngModel)]="user.l_name" name="l_name"></ion-input>
               </ion-item>
 
               <ion-item style="border: 2px solid rgb(0,139,158); border-radius: 5px;">
-                <ion-input type="email" placeholder="Email"></ion-input>
+                <ion-input type="email" placeholder="Email" [(ngModel)]="user.email" name="email"></ion-input>
               </ion-item>
 
               <ion-item style="border: 2px solid rgb(0,139,158); border-radius: 5px;">
-                <ion-input type="password" placeholder="Password"></ion-input>
+                <ion-input type="password" placeholder="Password" [(ngModel)]="user.password" name="password"></ion-input>
               </ion-item>
 
-              <button ion-button color="secondary" full style="border: 2px solid rgb(53,218,100); border-radius: 5px; height:50px" (click)="gotoMain()" >SIGN UP</button>
+              <button ion-button color="secondary" full style="border: 2px solid rgb(53,218,100); border-radius: 5px; height:50px" 
+              type="ngSubmit" >SIGN UP</button>
 
             </ion-list>
+          </form>
           </ion-col>
         </ion-row>
         

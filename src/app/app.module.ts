@@ -7,6 +7,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+//import { HttpModule } from "@angular/http";
+import { HttpClientModule } from '@angular/common/http';
+
 import { MainpagePage } from '../pages/mainpage/mainpage';
 import { SignupPage } from '../pages/signup/signup';
 import { ManageaccountPage } from '../pages/manageaccount/manageaccount';
@@ -17,6 +20,7 @@ import { buyPage } from '../pages/buy/buy';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { InstructormainpagePage } from '../pages/instructormainpage/instructormainpage';
 import { StatisticsPage } from '../pages/statistics/statistics'
+import { AuthService } from '../providers/auth-service/auth-service';
 
 
 
@@ -37,7 +41,7 @@ import { StatisticsPage } from '../pages/statistics/statistics'
 
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -59,7 +63,8 @@ import { StatisticsPage } from '../pages/statistics/statistics'
     StatusBar,
     SplashScreen,
     BarcodeScanner,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthService,
   ]
 })
 export class AppModule {}

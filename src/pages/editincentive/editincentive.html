@@ -16,16 +16,17 @@
 
 <ion-content padding  style="background-color:#d9d6d7">
 
-     <form class="form-vertical" role="form"> 
+     <form class="form-vertical" role="form" (ngSubmit)="editIncentive()" > 
+
                             <ion-row>
                                <ion-col col-8>
                                     <label> Incentive title   </label>
-                                    <input type="text" class="form-control" value="2 marks in SWE000"> 
+                                    <input type="text" class="form-control" value="2 marks in SWE000" [(ngModel)]="incentive.title" name="title"> 
                                </ion-col>
 
                                 <ion-col>
                                     <label> Points   </label>
-                                    <input type="text" class="form-control" value="300 points"> 
+                                    <input type="text" class="form-control" value="300 points" [(ngModel)]="incentive.points" name="points"> 
                                
    								 </ion-col>
 							</ion-row>
@@ -33,13 +34,12 @@
 							 <ion-row>
                                <ion-col>
                                     <label> Description   </label>
-                                    <ion-textarea rows="4" type="text" class="form-control" value="Description of the incentive"> </ion-textarea>
+                                    <ion-textarea rows="4" type="text" class="form-control" value="Description of the incentive" [(ngModel)]="incentive.description" name="description"> </ion-textarea>
                                </ion-col>
 							</ion-row>
-
 							 
-
-							<button type="submit" ion-button color="blue" full style="border: 2px solid #008a9d; border-radius: 5px; height:50px"  >Save Changes</button>
+	<button type="ngSubmit" ion-button color="blue" full style="border: 2px solid #008a9d; border-radius: 5px; height:50px"  >Save Changes</button>
 
 </form>
+
 </ion-content>

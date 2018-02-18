@@ -43,7 +43,7 @@ constructor(public navCtrl : NavController, public authService : AuthService, pr
     console.log('ionViewDidLoad SignupPage');
   }
 
-  signup() {
+  /* signup() {
     if(this.userData.id && this.userData.f_name  && this.userData.l_name && this.userData.email && this.userData.password){
       //Api connections
     this.authService.postData(this.userData, "signup").then((result) =>{
@@ -66,6 +66,8 @@ constructor(public navCtrl : NavController, public authService : AuthService, pr
   }
   
   }
+
+  */
 
   login() {
     this
@@ -95,7 +97,7 @@ constructor(public navCtrl : NavController, public authService : AuthService, pr
   this.authService.postData(this.user, 'signup').then((result) => {
 
     console.log(result);
-    login();
+    this.login();
 
   }, (err) => {
     console.log(err);

@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import { ActionSheetController } from 'ionic-angular';
 import { NavController, ToastController } from 'ionic-angular';
+import { AuthService } from '../../providers/auth-service/auth-service';
 import { AlertController } from 'ionic-angular';
-
 import { MainpagePage } from '../mainpage/mainpage';
 
 import { SignupPage } from '../signup/signup';
 import { InstructormainpagePage } from '../instructormainpage/instructormainpage';
-import { AuthService } from '../../providers/auth-service/auth-service';
 
 
 
@@ -18,10 +16,9 @@ import { AuthService } from '../../providers/auth-service/auth-service';
 export class HomePage {
 
   resposeData : any;
-  userData = {id: '', f_name: 'a', l_name: 'a', email: 'aa', password: ''};
+  userData = {id: '4334', f_name: 'a', l_name: 'a', email: 'aa', password: '324'};
 
-  constructor(public navCtrl: NavController, public actionSheetCtrl: ActionSheetController, public alertCtrl: AlertController,
-   authService : AuthService,  private toastCtrl:ToastController) {
+  constructor(authService : AuthService, public navCtrl: NavController, public alertCtrl: AlertController, private toastCtrl:ToastController) {
 
 
   }
@@ -42,12 +39,12 @@ export class HomePage {
 
  login(){
    if(this.userData.id && this.userData.password){
+
    this.authService.postData(this.userData, 'signup').then((result) =>{
     this.resposeData = result;
     console.log(this.resposeData);
     if(this.resposeData.userData){
      localStorage.setItem('userData', JSON.stringify(this.resposeData) )
-this.navCtrl.push(MainpagePage);
   }
   else{
     this.presentToast("Please give valid username and password");

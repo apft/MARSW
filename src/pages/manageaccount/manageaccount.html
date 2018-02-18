@@ -13,35 +13,36 @@
 </ion-header>
 
 <ion-content padding style="background-color:#d9d6d7">
-  <form class="form-vertical" role="form">
+  <form class="form-vertical" role="form" (ngSubmit)="updateUser()">
+
     <div style="opacity:0.8">
       <ion-row>
         <ion-col>
           <label> First name   </label>
-          <input type="text" class="form-control" value="Ahmed">
+          <input type="text" class="form-control" [(ngModel)]="user.f_name" name="f_name" value="Ahmed">
         </ion-col>
         <ion-col>
           <label> Last name   </label>
-          <input type="text" class="form-control" value="Ali">
+          <input type="text" class="form-control" [(ngModel)]="user.l_name" name="l_name" value="Ali">
 
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
           <label> Email   </label>
-          <input type="text" class="form-control" value="Ahmed@kfo.com">
+          <input type="text" class="form-control" [(ngModel)]="user.email" name="email" value="Ahmed@kfo.com">
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
           <label> Change password   </label>
-          <input type="password" class="form-control" value="Ahmedwowowowowo">
+          <input type="password" class="form-control" [(ngModel)]="user.password" name="password" value="Ahmedwowowowowo" >
         </ion-col>
       </ion-row>
     </div>
     <br />
     <br />
     <br />
-    <button type="submit" ion-button color="blue" full style="border: 2px solid #008a9d; border-radius: 5px; height:50px">Save Changes</button>
+    <button type="ngSubmit" ion-button color="blue" full style="border: 2px solid #008a9d; border-radius: 5px; height:50px">Save Changes</button>
   </form>
 </ion-content>

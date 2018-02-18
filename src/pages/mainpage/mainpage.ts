@@ -4,6 +4,8 @@ import { ManageaccountPage } from '../manageaccount/manageaccount';
 import { buyPage } from '../buy/buy';
 import { StatisticsPage } from '../statistics/statistics';
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
+import { HomePage } from '../home/home';
+
 
 
 
@@ -28,8 +30,8 @@ export class MainpagePage {
   
   constructor(public navCtrl: NavController, public navParams: NavParams, private barcodeScanner: BarcodeScanner) {
 
-    const data = JSON.parse(localStorage.getItem("userData"));
-  this.userDetails = data.userData;
+   // const data = JSON.parse(localStorage.getItem("userData"));
+ // this.userDetails = data.userData;
 
   }
 
@@ -65,8 +67,7 @@ export class MainpagePage {
   }    
 
   backToSignin() {
-    const root = this.app.getRootNav();
-    root.popToRoot();
+     this.navCtrl.push(HomePage);
   }
 
   logout() {

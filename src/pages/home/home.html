@@ -32,30 +32,33 @@
           <ion-col col-12></ion-col>
         </ion-row>
 
-        
+                   <form (ngSubmit)="login()">
+
         <ion-row>
+
           <ion-col col-12>
 
             <ion-list style="opacity:0.8;">
 
               <ion-item style="border: 2px solid #008a9d; border-radius: 5px;">
-                <ion-input type="text" placeholder="ID" [(ngModel)]="userData.id"></ion-input>
+                <ion-input type="text" placeholder="ID" [(ngModel)]="userData.id" name="id"></ion-input>
               </ion-item>
 
               <ion-row>
                 <ion-col col-12></ion-col>
               </ion-row>
               <ion-item style="border: 2px solid #008a9d; border-radius: 5px;">
-                <ion-input type="password" placeholder="Password" [(ngModel)]="userData.password"></ion-input>
+                <ion-input type="password" placeholder="Password" [(ngModel)]="userData.password" name="password"></ion-input>
               </ion-item>
 
             </ion-list>
           </ion-col>
         </ion-row>
         <ion-row >
-          <ion-col col-12> <button ion-button  color="blue" full style="border: 2px solid #008a9d;   border-radius: 5px; height:50px" (click)="login()" >Login</button> </ion-col>
+          <ion-col col-12> <button ion-button  color="blue" full style="border: 2px solid #008a9d;   border-radius: 5px; height:50px"
+            type="ngSubmit">Login</button> </ion-col>
         </ion-row>
-
+</form>
         <ion-row>
           <ion-col col-12>  </ion-col>
         </ion-row>
